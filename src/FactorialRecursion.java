@@ -1,16 +1,9 @@
-
+import java.util.Scanner;
 public class FactorialRecursion {
 
 	public static void main(String[] args) {
-
-		int n = 5;
 		
-		/** Setup for user input at later iteration
-		while(n<0) {
-			System.out.println("Number should be positive!");
-		}
-		*/
-		
+		int n = readInt();
 		System.out.println(factorial(n));
 
 	}
@@ -24,5 +17,19 @@ public class FactorialRecursion {
 		}
 		
 		return 0;
+	}
+	
+	public static int readInt() {
+		System.out.print("Enter number: ");
+		Scanner input = new Scanner(System.in);
+		int n = input.nextInt();
+		
+		while(n<0) {
+			System.out.println("Number should be positive!");
+			n = readInt();
+		}
+		
+		input.close();
+		return n;
 	}
 }
